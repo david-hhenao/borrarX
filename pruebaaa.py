@@ -15,6 +15,10 @@ tokenizer.fit_on_texts(DF['Comentarios'])
 total_words = len(tokenizer.word_index) + 1
 max_sequence_len = 100
 
+# Prueba 2
+for x,y in enumerate(range(5,13)):
+    print(x,y)
+
 # sequences
 
 sequences=tokenizer.texts_to_sequences(DF['Comentarios'])
