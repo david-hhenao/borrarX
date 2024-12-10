@@ -25,3 +25,8 @@ sequences=tokenizer.texts_to_sequences(DF['Comentarios'])
 padded = pad_sequences(sequences, maxlen=max_sequence_len, padding='post', truncating='post')
 
 padded.shape
+
+# Prueba 1
+for i in range(10):
+    j = i *2.65
+    print(j,i)
