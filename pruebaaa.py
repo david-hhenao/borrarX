@@ -32,3 +32,17 @@ for i in range(10):
     print(j+i)
     
 print('estamos en la nueva rama de pruebas')
+
+azuL = "como el mar azul"
+
+def evaluate_comment(comment, tokenizer, model, max_sequence_len):
+  text = [comment]
+  sequences = tokenizer.texts_to_sequences(text)
+  padded = pad_sequences(sequences, maxlen=max_sequence_len, padding='post', truncating='post')
+  prediction = model.predict(padded)
+  prediction = np.argmax(prediction, axis=1)
+  if prediction == 0:
+    prediction = 'Negativo'
+  else:
+    prediction = 'Positivo'
+  return prediction
