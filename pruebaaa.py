@@ -29,4 +29,6 @@ padded.shape
 # Prueba 1
 for i in range(10):
     j = i *2.65
-    print(j,i)
+    print(j+i)
+    
+print('estamos en la nueva rama de pruebas')
