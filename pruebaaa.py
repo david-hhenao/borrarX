@@ -46,3 +46,11 @@ def evaluate_comment(comment, tokenizer, model, max_sequence_len):
   else:
     prediction = 'Positivo'
   return prediction
+
+
+def compute_metrics(pred):
+    labels = pred.label_ids
+    preds = pred.predictions.argmax(-1)
+    f1 = f1_score(labels, preds, average="weighted")
+    acc = accuracy_score(labels, preds)
+    return {"accuracy": acc, "f1": f1}
